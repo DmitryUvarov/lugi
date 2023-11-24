@@ -1,3 +1,228 @@
 //====================================================================================================
 
+.category {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: toRem(6);
+
+  font-size: toRem(14);
+  line-height: 135.7%; /* 19/14 */
+  &__item {
+    border-radius: toRem(49);
+    background: #fff;
+    padding: toRem(8) toRem(9);
+
+    display: flex;
+    column-gap: toRem(5);
+
+    transition: all 0.2s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px toRem(15) 0px;
+      }
+    }
+  }
+
+  &__ico {
+    flex: 0 0 toRem(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.hero {
+  &__container {
+    position: relative;
+  }
+
+  &__body {
+    padding-top: toRem(137);
+    @include adaptiveValue("padding-bottom", 172, 30);
+
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: toRem(48);
+
+      padding-top: toRem(25);
+    }
+  }
+
+  &__content {
+    @media (min-width: $tablet) {
+      max-width: toRem(570);
+    }
+  }
+
+  &__title {
+    font-family: "Montserrat Alternates";
+    @include adaptiveValue("font-size", 54, 36, 0, 800, 375);
+    font-weight: 600;
+    line-height: 100%; /* 54px */
+
+    span {
+      color: #e28d33;
+    }
+
+    @media (max-width: em(800)) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 12, 18);
+    }
+  }
+
+  &__text {
+    font-size: toRem(16);
+    line-height: 170%; /* 27.2px */
+
+    @media (max-width: em(800)) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(24);
+    }
+  }
+
+  &__category {
+    &:not(:last-child) {
+      margin-bottom: toRem(24);
+    }
+
+    @media (max-width: em(800)) {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: toRem(12);
+
+    @media (max-width: em(800)) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    @media (max-width: em(800)) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    @media (min-width: $tablet) {
+      position: absolute;
+      top: toRem(40);
+      right: toRem(-260);
+      width: percent(889, 1213);
+      z-index: -2;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.image-hero {
+  &__decor {
+    top: toRem(40);
+    right: calc(100% + toRem(35));
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__circle {
+    position: absolute;
+    top: toRem(25);
+    right: toRem(290);
+    color: #fff;
+
+    @include adaptiveValue("width", 166, 97);
+    @include adaptiveValue("height", 166, 97);
+    background-color: #3472bf;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: em(800)) and (max-width: $tablet) {
+      display: none;
+    }
+    @media (max-width: em(800)) {
+      top: toRem(40);
+      right: toRem(65);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      box-shadow: 0 0 0 toRem(10) rgba(52, 114, 192, 0.09);
+      inset: 0;
+      border-radius: 50%;
+      transition: all 0.3s ease 0s;
+      transform: scale(1);
+      animation: pulse 2s infinite;
+    }
+  }
+
+  &__num {
+    font-family: "Montserrat Alternates";
+    @include adaptiveValue("font-size", 37, 21);
+    line-height: 121.6%; /* 45/37 */
+  }
+  &__text {
+    font-family: "Manrope";
+    @include adaptiveValue("font-size", 17, 10);
+    line-height: 135.3%; /* 23/17 */
+  }
+}
+
+.decor {
+  position: absolute;
+  width: max-content;
+  color: #131921;
+  font-family: "Caveat";
+  font-size: 25px;
+  line-height: 106.5%; /* 26.625px */
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: toRem(16);
+    left: calc(100% + toRem(16));
+    display: block;
+    background-image: url("@img/decor-arr-right.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: toRem(84);
+    height: toRem(35);
+    // background-size: toRem(84) toRem(35);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 toRem(10) rgba(52, 114, 192, 0.09);
+  }
+
+  70% {
+    box-shadow: 0 0 0 toRem(25) rgba(52, 114, 192, 0.09);
+  }
+
+  100% {
+    box-shadow: 0 0 0 toRem(10) rgba(52, 114, 192, 0.09);
+  }
+}
 //====================================================================================================
