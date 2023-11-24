@@ -28,6 +28,12 @@
     cursor: pointer;
     width: 100%;
     border-radius: toRem(8);
+    transition: all 0.2s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #dfe4ea;
+      }
+    }
 
     ._select-open & {
       border-radius: toRem(8) toRem(8) 0 0;
@@ -123,7 +129,7 @@
     }
     @media (any-hover: hover) {
       &:hover {
-        background: #d9d9d9;
+        background: #dfe4ea;
       }
     }
   }

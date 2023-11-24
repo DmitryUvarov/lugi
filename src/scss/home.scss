@@ -440,9 +440,17 @@
     }
   }
 
-  &__list {
+  &__lists {
     &:not(:last-child) {
       margin-bottom: toRem(20);
+    }
+  }
+
+  &__list {
+    display: none;
+
+    &._show {
+      display: grid;
     }
   }
 
@@ -465,6 +473,12 @@
   }
 
   &__banner {
+    cursor: pointer;
+    display: none;
+
+    &._show {
+      display: block;
+    }
   }
 }
 

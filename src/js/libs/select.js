@@ -463,7 +463,7 @@ class SelectConstructor {
 				originalSelectSelectedItems.forEach(originalSelectSelectedItem => {
 					originalSelectSelectedItem.removeAttribute('selected');
 				});
-				// Вибираємо елементи 
+				// Вибираємо елементи
 				const selectSelectedItems = selectItem.querySelectorAll(this.getSelectClass(this.selectClasses.classSelectOptionSelected));
 				selectSelectedItems.forEach(selectSelectedItems => {
 					originalSelect.querySelector(`option[value = "${selectSelectedItems.dataset.value}"]`).setAttribute('selected', 'selected');

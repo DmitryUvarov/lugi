@@ -16,43 +16,43 @@
 							<h1 class="hero__title">Прямий постачальник <span>високоякісних</span> товарів</h1>
 							<div class="hero__text">LUGI — це надійний партнер оптових закупівель, з нами ви робите закупки по вигодній ціні та отримаете бонуси!</div>
 							<div class="hero__category category">
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="0" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/01.svg" alt="">
 									</div>
 									<span>Електроніка</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="1" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/02.svg" alt="">
 									</div>
 									<span>Побутова техніка</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="2" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/03.svg" alt="">
 									</div>
 									<span>Все для кухні</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="3" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/04.svg" alt="">
 									</div>
 									<span>Гірлянди</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="4" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/05.svg" alt="">
 									</div>
 									<span>Краса та здоровʼя</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="5" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/06.svg" alt="">
 									</div>
 									<span>Фени для волосся</span>
 								</button>
-								<button type="button" class="category__item">
+								<button type="button" class="category__item" data-category="6" data-goto="#products">
 									<div class="category__ico">
 										<img src="@img/category/07.svg" alt="">
 									</div>
@@ -61,8 +61,8 @@
 								<span>Та інше!</span>
 							</div>
 							<div class="hero__buttons">
-								<button class="hero__button button">Зарееструватись</button>
-								<button class="hero__button button-gray">Дивитись напрямки</button>
+								<button class="hero__button button" data-popup="#contact">Зарееструватись</button>
+								<button class="hero__button button-gray" data-goto="#choose">Дивитись напрямки</button>
 							</div>
 						</div>
 						<div class="hero__image image-hero">
@@ -78,7 +78,7 @@
 				</div>
 			</section>
 
-			<section class="products">
+			<section id="products" class="products">
 				<div class="products__container">
 					<div class="products__body">
 						<h2 class="products__title title">
@@ -89,14 +89,14 @@
 						<div data-tabs class="products__tabs tabs-products">
 
 							<div class="tabs-products__slider">
-								<div data-tabs-titles class="tabs-products__wrapper swiper-wrapper">
-									<button type="button" class="swiper-slide tabs-products__title _tab-active">Електроніка</button>
-									<button type="button" class="swiper-slide tabs-products__title">Побутова техніка</button>
-									<button type="button" class="swiper-slide tabs-products__title">Все для кухні</button>
-									<button type="button" class="swiper-slide tabs-products__title">Краса та здоровʼя</button>
-									<button type="button" class="swiper-slide tabs-products__title">Фени для волосся</button>
-									<button type="button" class="swiper-slide tabs-products__title">Дитячі товари</button>
-									<button type="button" class="swiper-slide tabs-products__title">Гірлянди</button>
+								<div data-tabs-titles data-category-buttons class="tabs-products__wrapper swiper-wrapper">
+									<button type="button" data-category-button="0" class="swiper-slide tabs-products__title _tab-active">Електроніка</button>
+									<button type="button" data-category-button="1" class="swiper-slide tabs-products__title">Побутова техніка</button>
+									<button type="button" data-category-button="2" class="swiper-slide tabs-products__title">Все для кухні</button>
+									<button type="button" data-category-button="4" class="swiper-slide tabs-products__title">Краса та здоровʼя</button>
+									<button type="button" data-category-button="5" class="swiper-slide tabs-products__title">Фени для волосся</button>
+									<button type="button" data-category-button="6" class="swiper-slide tabs-products__title">Дитячі товари</button>
+									<button type="button" data-category-button="3" class="swiper-slide tabs-products__title">Гірлянди</button>
 								</div>
 							</div>
 							<div data-tabs-body class="tabs-products__content">
@@ -115,7 +115,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -134,7 +134,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -153,7 +153,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -172,7 +172,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -191,7 +191,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -210,7 +210,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -229,7 +229,7 @@
 												<li class="list__item">Проектори</li>
 												<li class="list__item">Смарт годинники</li>
 											</ul>
-											<button class="product-item__button button">Зарееструватись</button>
+											<button class="product-item__button button" data-popup="#contact">Зарееструватись</button>
 										</div>
 									</div>
 								</div>
@@ -240,7 +240,7 @@
 				</div>
 			</section>
 
-			<section class="choose">
+			<section class="choose" id="choose">
 				<div class="choose__container">
 					<div class="choose__body">
 						<div class="choose__content">
@@ -248,52 +248,65 @@
 							<div class="choose__type">
 								<div class="choose__type-title">Оберіть тип співправці:</div>
 								<div class="choose__navigation">
-									<div class="choose__navigation-title _active">Гуртова співпраця</div>
-									<div class="choose__navigation-title">Дропшипінг</div>
-									<div class="choose__navigation-title">Великий гурт</div>
+									<button type="button" data-choose-title class="choose__navigation-title _active">Гуртова співпраця</button>
+									<button type="button" data-choose-title class="choose__navigation-title">Дропшипінг</button>
+									<button type="button" data-choose-title class="choose__navigation-title">Великий гурт</button>
 
-									<select name="form[]" data-class-modif="choose">
+									<select name="form[]" data-class-modif="choose" data-show-selected data-choose-select>
 										<option value="1" selected>Гуртова співпраця</option>
 										<option value="2">Дропшипінг</option>
-										<option value="2">Великий гурт</option>
+										<option value="3">Великий гурт</option>
 									</select>
 
 								</div>
-								<ul class="choose__list list">
-									<h3 class="list__title">Гуртова співпраця</h3>
-									<li class="list__item">Швидку та надійну доставку</li>
-									<li class="list__item">Високу якість товару</li>
-									<li class="list__item">Персонального менеджера</li>
-									<li class="list__item">Найкращі умови співпраці</li>
-								</ul>
+								<div class="choose__lists" data-choose-groop>
+									<ul class="choose__list list _show" data-choose-content>
+										<h3 class="list__title">Гуртова співпраця</h3>
+										<li class="list__item">Швидку та надійну доставку</li>
+										<li class="list__item">Високу якість товару</li>
+										<li class="list__item">Персонального менеджера</li>
+										<li class="list__item">Найкращі умови співпраці</li>
+									</ul>
+									<ul class="choose__list list" data-choose-content>
+										<h3 class="list__title">Дропшипінг</h3>
+										<li class="list__item">Швидку та надійну доставку</li>
+										<li class="list__item">Високу якість товару</li>
+										<li class="list__item">Персонального менеджера</li>
+									</ul>
+									<ul class="choose__list list" data-choose-content>
+										<h3 class="list__title">Великий гурт</h3>
+										<li class="list__item">Швидку та надійну доставку</li>
+										<li class="list__item">Високу якість товару</li>
+									</ul>
+								</div>
 								<div class="choose__buttons">
-									<button class="choose__button button">Зарееструватись</button>
-									<button class="choose__button button-gray _icon-info">Умови співпраці</button>
+									<button class="choose__button button" data-popup="#contact">Зарееструватись</button>
+									<button class="choose__button button-gray _icon-info" data-popup="#terms">Умови співпраці</button>
 								</div>
 							</div>
 						</div>
-						<div class="choose__banners">
-							<div class="choose__banner banner" data-direction="0">
+						<div class="choose__banners" data-choose-groop>
+							<div class="choose__banner banner _show" data-choose-content data-popup="#contact">
 								<div class="banner__mark">Бонус!</div>
 								<div class="banner__title">Перша доставка <span>безкоштовно</span></div>
 								<div class="banner__text">Спробуй вже зараз!</div>
 
 								<div class="banner__bg-ibg--contain"><img src="@img/benner/01.png" alt=""></div>
 							</div>
-							<!-- <div class="choose__banner banner" data-direction="0">
+							<div class="choose__banner banner" data-choose-content data-popup="#contact">
 								<div class="banner__mark">Бонус!</div>
 								<div class="banner__title">Перша доставка <span>безкоштовно</span></div>
 								<div class="banner__text">Спробуй вже зараз!</div>
 
 								<div class="banner__bg-ibg--contain"><img src="@img/benner/02.png" alt=""></div>
 							</div>
-							<div class="choose__banner banner" data-direction="0">
+							<div class="choose__banner banner" data-choose-content data-popup="#contact">
 								<div class="banner__mark">Бонус!</div>
 								<div class="banner__title">Перша доставка <span>безкоштовно</span></div>
 								<div class="banner__text">Спробуй вже зараз!</div>
 
 								<div class="banner__bg-ibg--contain"><img src="@img/benner/03.png" alt=""></div>
-							</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
@@ -359,7 +372,7 @@
 								</div>
 								<button hidden data-showmore-button type="button" class="about__showmore showmore__more"><span>Читати далі</span><span>Сховати</span></button>
 							</div>
-							<button class="about__button button">Зарееструватись</button>
+							<button class="about__button button" data-popup="#contact">Зарееструватись</button>
 						</div>
 
 					</div>
@@ -440,7 +453,7 @@
 						<div class="faq__banner contact-banner">
 							<div class="contact-banner__title">Не знайшли відповідь <span>на питання?</span></div>
 							<div class="contact-banner__text">Залиште заявку, ми вас проконсультуємо!</div>
-							<button class="contact-banner__button button-gray">Залишити заявку</button>
+							<button class="contact-banner__button button-gray" data-popup="#contact">Залишити заявку</button>
 							<div class="contact-banner__image-ibg--contain"><img src="@img/benner/people.png" alt=""></div>
 						</div>
 

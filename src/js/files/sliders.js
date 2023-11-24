@@ -36,6 +36,7 @@ function initSliders() {
 		slidesPerView: "auto",
 		spaceBetween: 20,
 		speed: 800,
+		slideToClickedSlide: true,
 	});
 	}
 	if (document.querySelector('.about__slider')) {

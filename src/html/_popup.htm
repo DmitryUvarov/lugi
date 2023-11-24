@@ -6,25 +6,25 @@
 			<div class="popup__title">Форма запису</div>
 			<div class="popup__text">Залиште заявку, ми з вами звʼяжемося</div>
 
-			<form data-dev action="#" class="popup__form form-contact">
+			<form data-dev data-popup-message="#thank" action="#" class="popup__form form-contact">
 				<div class="form-contact__line">
 					<label for="inp1" class="form-contact__label">Як до вас звертатись? *</label>
-					<input autocomplete="off" type="text" name="form[]" placeholder="Ім'я" class="form-contact__input input">
+					<input autocomplete="off" id="inp1" type="text" name="form[]" data-required data-error="Вкажіть ваше і'мя" data-validate placeholder="Ім'я" class="form-contact__input input">
 				</div>
 				<div class="form-contact__line">
-					<label for="inp1" class="form-contact__label">E-mail *</label>
-					<input autocomplete="off" type="text" name="form[]" placeholder="youremail@gmail.com" class="form-contact__input input">
+					<label for="inp2" class="form-contact__label">E-mail *</label>
+					<input autocomplete="off" id="inp2" type="text" name="form[]" data-required="email" data-error="Вкажіть правильний E-mail" data-validate placeholder="youremail@gmail.com" class="form-contact__input input">
 				</div>
 				<div class="form-contact__line">
-					<label for="inp1" class="form-contact__label">Телефон</label>
-					<input autocomplete="off" type="text" name="form[]" placeholder="+380" class="form-contact__input input">
+					<label for="inp3" class="form-contact__label">Телефон</label>
+					<input autocomplete="off" id="inp3" type="text" name="form[]" placeholder="+380" class="form-contact__input input">
 				</div>
 				<div class="form-contact__line">
-					<label for="inp1" class="form-contact__label">Вид співпраці</label>
-					<select name="form[]">
+					<label class="form-contact__label">Вид співпраці</label>
+					<select name="form[]" data-show-selected data-choose-select>
 						<option value="1" selected>Гуртова співпраця</option>
 						<option value="2">Дропшипінг</option>
-						<option value="2">Великий гурт</option>
+						<option value="3">Великий гурт</option>
 					</select>
 				</div>
 				<button type="submit" class="form-contact__button button">Відправити</button>
