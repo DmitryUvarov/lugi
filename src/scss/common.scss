@@ -15,6 +15,73 @@
 
 //========================================================================================================================================================
 
+.list {
+  display: grid;
+  gap: toRem(14);
+
+  &__title {
+    font-family: "Montserrat Alternates";
+    font-size: toRem(22);
+    line-height: 122.7%; /* 27/22 */
+    margin-bottom: toRem(6);
+  }
+
+  &__item {
+    font-family: "Manrope";
+    font-size: 15px;
+    line-height: 160%; /* 24px */
+
+    display: flex;
+    align-items: center;
+    column-gap: toRem(8);
+
+    &::before {
+      content: "";
+      display: block;
+      flex: 0 0 toRem(20);
+      height: toRem(20);
+      background-image: url("@img/check.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.decor {
+  position: absolute;
+  width: max-content;
+  color: #131921;
+  font-family: "Caveat";
+  font-size: 25px;
+  line-height: 106.5%; /* 26.625px */
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: toRem(16);
+    left: calc(100% + toRem(16));
+    display: block;
+    background-image: url("@img/decor-arr-right.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: toRem(84);
+    height: toRem(35);
+  }
+
+  &_rigth {
+    &::after {
+      background-image: url("@img/decor-arr-left.svg");
+      left: auto;
+      right: calc(100% + toRem(16));
+    }
+  }
+}
+
+//========================================================================================================================================================
+
 // .fancybox__container {
 //     max-width: none;
 // }
