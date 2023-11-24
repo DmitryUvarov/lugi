@@ -8,7 +8,8 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import {  Navigation, Pagination } from 'swiper/modules';
+import EffectCarousel from './effect-carousel.esm.js';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -112,16 +113,42 @@ function initSliders() {
 		slidesPerView: "auto",
 		spaceBetween: 20,
 		speed: 800,
-
-		// Скроллбар
-		/*
-		scrollbar: {
-			el: '.swiper-scrollbar',
-			draggable: true,
-		},
-		*/
 	});
-}
+	}
+	if (document.querySelector('.about__slider')) {
+		new Swiper('.about__slider', {
+			modules: [EffectCarousel, Navigation, Pagination],
+			effect: 'carousel',
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1.39,
+			grabCursor: true,
+			speed: 800,
+			loop: true,
+
+
+			cardsEffect: {
+				rotate: false,
+			},
+			navigation: {
+				nextEl: ".about__slider .button-next",
+				prevEl: ".about__slider .button-prev",
+			},
+			pagination: {
+				el: '.about__pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				600: {
+					slidesPerView: 1.39,
+				},
+			},
+
+	});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

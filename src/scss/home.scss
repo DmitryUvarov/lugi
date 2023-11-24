@@ -601,3 +601,133 @@
     line-height: 160%; /* 22.4px */
   }
 }
+
+//========================================================================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 35, 30);
+  @include adaptiveValue("padding-bottom", 35, 30);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("column-gap", 74, 15, 0, 1213, 991);
+
+    @media (max-width: em(800)) {
+      flex-direction: column;
+      @include adaptiveValue("row-gap", 42, 26, 0, 800, 375);
+    }
+  }
+
+  &__slider {
+    height: fit-content;
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    @media (max-width: em(800)) {
+      max-width: toRem(570);
+      margin: 0 auto;
+      width: 100%;
+    }
+    @media (max-width: em(600)) {
+      overflow: hidden;
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__slide-ibg {
+    height: fit-content;
+    position: relative;
+    display: block;
+    padding-bottom: percent(566, 571);
+    border-radius: toRem(28);
+    overflow: hidden;
+
+    &.swiper-slide-next,
+    &.swiper-slide-prev {
+      img {
+        @media (min-width: em(600)) {
+          opacity: 0.3;
+          transition: all 0.3s ease 0.5s;
+        }
+      }
+    }
+
+    img {
+      @media (min-width: em(600)) {
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    @media (max-width: em(600)) {
+      padding-bottom: percent(449, 327);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        & img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__content {
+    flex: 0 0 percent(520, 1165);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(26);
+  }
+
+  &__title {
+    @media (max-width: em(800)) {
+      display: none;
+    }
+    &_mob {
+      @media (min-width: em(800)) {
+        display: none;
+      }
+      @media (max-width: em(800)) {
+        display: block;
+        margin-bottom: toRem(25);
+      }
+    }
+  }
+
+  &__showmore {
+  }
+
+  &__button {
+    margin-top: auto;
+    width: max-content;
+  }
+
+  &__navigation {
+    justify-content: space-between;
+    @include adaptiveValue("padding", 15, 2, 0, 1213, 800);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+
+    @media (max-width: em(800)) {
+      padding: 0 toRem(15);
+    }
+
+    @media (max-width: em(600)) {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    margin-top: toRem(26);
+    @media (min-width: em(600)) {
+      display: none;
+    }
+  }
+}

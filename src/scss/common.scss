@@ -82,8 +82,101 @@
 
 //========================================================================================================================================================
 
+.play {
+  position: relative;
+
+  &::before {
+    content: "\e907";
+    @extend %ic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e28d33;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: toRem(24);
+    color: #fff;
+  }
+}
+
+//========================================================================================================================================================
+
+.navigation {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: toRem(10);
+  &__button {
+    pointer-events: all;
+    width: toRem(52);
+    height: toRem(52);
+    border-radius: 50%;
+    background-color: #131921;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: toRem(12);
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #e28d33;
+      }
+    }
+  }
+}
+.button-prev {
+}
+.button-next {
+}
+
+//========================================================================================================================================================
+
+.pagination {
+  display: flex;
+  gap: toRem(3);
+  align-items: center;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    width: toRem(10);
+    height: toRem(10);
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #e28d33;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #e28d33;
+  }
+}
+
+//========================================================================================================================================================
+
 // .fancybox__container {
 //     max-width: none;
 // }
 
 //========================================================================================================================================================
+
+.swiper-carousel {
+  position: relative;
+  .swiper-slide {
+    position: relative;
+  }
+}

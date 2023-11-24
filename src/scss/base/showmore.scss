@@ -3,15 +3,36 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
-	span {
-		&:last-child {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
-				display: block;
-			}
-		}
-	}
+  span {
+    &:last-child {
+      display: none;
+    }
+    ._showmore-active & {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.showmore {
+  color: #131921;
+  font-family: "Manrope";
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: 170%; /* 27.2px */
+  &__content {
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 25, 15);
+      }
+    }
+  }
+
+  &__more {
+    color: #e28d33;
+  }
 }
