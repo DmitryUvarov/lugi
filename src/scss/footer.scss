@@ -1,3 +1,185 @@
 //====================================================================================================
 
+.footer {
+  background: #131921;
+  padding: toRem(56) 0 toRem(20);
+  &__container {
+    display: grid;
+    gap: toRem(40);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include adaptiveValue("gap", 24, 15, 0, 1213, 991);
+
+    @media (max-width: $tablet) and (min-width: em(800)) {
+      grid-template-columns: repeat(3, 1fr) auto;
+    }
+
+    @media (max-width: em(800)) {
+      grid-template-columns: 1fr;
+      gap: toRem(24);
+    }
+  }
+
+  &__col {
+  }
+
+  &__logo {
+    display: block;
+    max-width: 170px;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__copy {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Manrope;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 138.5%; /* 18/13 */
+  }
+
+  &__title {
+    color: #fff;
+    font-family: "Montserrat Alternates";
+    @include adaptiveValue("font-size", 24, 18, 0, 1213, 991);
+    font-weight: 600;
+    line-height: 110%; /* 26.4px */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 16);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: toRem(24);
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: #fff;
+    font-family: "Manrope";
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: 135.7%; /* 19/14 */
+  }
+
+  &__line {
+    display: grid;
+    gap: toRem(8);
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
+  &__line-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Manrope;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: 135.7%; /* 19/14 */
+  }
+
+  &__line-link {
+    color: #fff;
+
+    font-family: Manrope;
+    @include adaptiveValue("font-size", 20, 14, 0, 1213, 991);
+    font-weight: 400;
+    line-height: 135%; /* 27/20 */
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #e28d33;
+      }
+    }
+  }
+
+  &__line-text {
+    color: #fff;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 135.7%; /* 19/14 */
+  }
+
+  &__social {
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: toRem(24);
+
+    @media (max-width: em(800)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__bottom-link {
+    color: #fff;
+    font-family: Manrope;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 138.5%; /* 18/13 */
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #e28d33;
+      }
+    }
+  }
+}
+
+.social-big {
+  display: grid;
+  gap: toRem(8);
+  height: fit-content;
+  &__item {
+    border-radius: toRem(12);
+    background: #000;
+    padding: 0 toRem(20);
+    height: toRem(48);
+
+    color: #fff;
+    font-family: Manrope;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: 135.7%; /* 19/14 */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: toRem(8);
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #e28d33;
+      }
+    }
+
+    &::before {
+      color: #e28d33;
+      font-size: toRem(21);
+    }
+  }
+}
+
 //====================================================================================================
