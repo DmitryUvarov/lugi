@@ -28,8 +28,8 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.1234342')) {
-			new Swiper('.12324234', {
+	if (document.querySelector('.df1234342')) {
+			new Swiper('.df12324234', {
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
@@ -104,6 +104,24 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.tabs-products__slider')) {
+		new Swiper('.tabs-products__slider', {
+		modules: [],
+		observer: true,
+		observeParents: true,
+		slidesPerView: "auto",
+		spaceBetween: 20,
+		speed: 800,
+
+		// Скроллбар
+		/*
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+		*/
+	});
+}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

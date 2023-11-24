@@ -208,7 +208,14 @@
     background-size: contain;
     width: toRem(84);
     height: toRem(35);
-    // background-size: toRem(84) toRem(35);
+  }
+
+  &_rigth {
+    &::after {
+      background-image: url("@img/decor-arr-left.svg");
+      left: auto;
+      right: calc(100% + toRem(16));
+    }
   }
 }
 
@@ -226,3 +233,163 @@
   }
 }
 //====================================================================================================
+
+.products {
+  @include adaptiveValue("padding-top", 35, 30);
+  @include adaptiveValue("padding-bottom", 35, 30);
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+    width: max-content;
+    position: relative;
+    margin-bottom: toRem(25);
+  }
+
+  &__decor {
+    top: toRem(-20);
+    left: calc(100% + toRem(130));
+
+    @media (max-width: em(800)) {
+      display: none;
+    }
+  }
+
+  &__tabs {
+  }
+}
+
+.tabs-products {
+  &__slider {
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Manrope";
+    font-size: toRem(16);
+    line-height: 170%; /* 27.2px */
+    padding-bottom: toRem(18);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: toRem(2);
+      left: 0;
+      bottom: 0;
+      border-radius: toRem(4);
+      background-color: #fff;
+      display: block;
+
+      transition: all 0.2s ease 0s;
+    }
+
+    &._tab-active {
+      &::after {
+        background-color: #e28d33;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          background-color: #e28d33;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: toRem(38);
+  }
+
+  &__body {
+  }
+}
+
+.product-item {
+  &__body {
+    display: flex;
+    justify-content: flex-end;
+    gap: toRem(24);
+
+    @media (max-width: em(800)) {
+      flex-direction: column;
+    }
+  }
+
+  &__image-ibg--contain {
+    padding-bottom: percent(206, 327);
+    @media (min-width: em(800)) {
+      padding-bottom: percent(360, 1165);
+      flex: 0 0 percent(570, 1165);
+    }
+
+    img {
+      object-position: top center;
+    }
+  }
+
+  &__content {
+    @media (min-width: $pc) {
+      flex: 0 0 percent(450, 1165);
+    }
+    @media (min-width: em(800)) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__title {
+    font-family: "Montserrat Alternates";
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 121.4%; /* 34/28 */
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__button {
+    @media (max-width: em(800)) {
+      width: 100%;
+    }
+  }
+}
+.list {
+  display: grid;
+  gap: toRem(14);
+  &__item {
+    font-family: "Manrope";
+    font-size: 15px;
+    line-height: 160%; /* 24px */
+
+    display: flex;
+    align-items: center;
+    column-gap: toRem(8);
+
+    &::before {
+      content: "";
+      display: block;
+      flex: 0 0 toRem(20);
+      height: toRem(20);
+      background-image: url("@img/check.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}
+
+//========================================================================================================================================================
