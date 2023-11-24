@@ -3,90 +3,74 @@
 
 // Блок зі спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
+  display: grid;
+  gap: toRem(8);
+
+  color: #131921;
+  font-family: "Manrope";
+  font-size: toRem(15);
+  font-weight: 400;
+  line-height: 160%; /* 24px */
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
 }
 // Заголовок спойлера
 .spollers__title {
-	width: 100%;
-	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
-	list-style: none;
-	&::marker {
-	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
-	}
+  width: 100%;
+  display: flex;
+  gap: toRem(10);
+  justify-content: space-between;
+  cursor: default;
+  text-align: left;
+  padding: toRem(16);
+  border-radius: toRem(12);
+  position: relative;
+  list-style: none;
+  background-color: #fff;
+
+  &._spoller-active {
+    border-radius: toRem(12) toRem(12) 0 0;
+  }
+
+  &::marker {
+  }
+  ._spoller-init & {
+    cursor: pointer;
+    &::after {
+      content: "\e900";
+      @extend %ic;
+      flex: 0 0 toRem(20);
+      height: 100%;
+      line-height: 240%; /* 24/10 */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: toRem(10);
+      color: #9097a0;
+      transition: all 0.5s ease 0s;
+    }
+
+    &._spoller-active {
+      &::after {
+        transform: rotate(-180deg);
+        color: #e28d33;
+      }
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        color: #e28d33;
+      }
+    }
+  }
 }
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+  padding: toRem(0) toRem(16) toRem(16);
+  border-radius: 0 0 toRem(12) toRem(12);
+  background-color: #fff;
 }

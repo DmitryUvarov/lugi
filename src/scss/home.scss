@@ -704,6 +704,10 @@
   &__button {
     margin-top: auto;
     width: max-content;
+
+    @media (max-width: em(600)) {
+      width: 100%;
+    }
   }
 
   &__navigation {
@@ -728,6 +732,109 @@
     margin-top: toRem(26);
     @media (min-width: em(600)) {
       display: none;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.faq {
+  @include adaptiveValue("padding-top", 35, 30);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    margin-bottom: toRem(35);
+  }
+
+  &__body {
+    display: flex;
+    gap: toRem(24);
+
+    @media (max-width: em(800)) {
+      flex-direction: column;
+    }
+  }
+
+  &__spollers {
+    @media (min-width: em(800)) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__banner {
+    @media (min-width: em(800)) {
+      flex: 0 0 toRem(273);
+    }
+  }
+}
+
+.contact-banner {
+  border-radius: toRem(24);
+  background: #e28d33;
+  padding: toRem(28);
+  text-align: center;
+  height: toRem(511);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: toRem(10);
+
+  @media (max-width: em(800)) {
+    padding: toRem(28) toRem(24) toRem(24);
+    max-width: toRem(400);
+    margin-left: auto;
+    margin-right: auto;
+    height: toRem(541);
+  }
+
+  & > * {
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: "Montserrat Alternates";
+    font-size: toRem(28);
+    font-weight: 600;
+    line-height: 121.4%; /* 34/28 */
+  }
+
+  &__text {
+    color: #fff;
+    font-family: "Manrope";
+    font-size: toRem(15);
+    font-weight: 400;
+    line-height: 160%; /* 24px */
+  }
+
+  &__button {
+    background-color: #131921;
+    margin-top: auto;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #343536;
+      }
+    }
+  }
+
+  &__image-ibg--contain {
+    position: absolute;
+    width: calc(100% - toRem(60));
+    left: toRem(30);
+    height: 100%;
+    top: 0;
+    z-index: 1;
+
+    @media (max-width: em(800)) {
+      width: calc(100% - toRem(112));
+      left: toRem(56);
+    }
+
+    img {
+      object-position: bottom center;
     }
   }
 }
