@@ -4,31 +4,54 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .input {
-	border-radius: 0 !important;
-	width: 100%;
-	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._form-focus {
-	}
-	&._form-error {
-	}
+  border-radius: toRem(8);
+  background-color: #f1f4f7;
+  width: 100%;
+  display: block;
+  padding: 0px toRem(16);
+  height: toRem(43);
+
+  color: #131921;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 135.7%; /* 19/14 */
+
+  &._form-focus {
+  }
+  &._form-error {
+  }
+  transition: all 0.2s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #dfe4ea;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #dfe4ea;
+  }
+
+  &::placeholder {
+    color: #7f7f7f;
+  }
 }
 .input[placeholder]:not([data-placeholder-nohiden]) {
-	&::placeholder {
-		transition: opacity 0.3s;
-	}
-	&:focus::placeholder {
-		opacity: 0;
-	}
+  &::placeholder {
+    transition: opacity 0.3s;
+  }
+  &:focus::placeholder {
+    opacity: 0;
+  }
 }
 
 textarea.input {
-	resize: none;
-	padding: 0px 0px;
+  resize: none;
+  padding: 0px 0px;
 }
