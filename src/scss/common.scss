@@ -180,3 +180,18 @@
     position: relative;
   }
 }
+
+//========================================================================================================================================================
+
+[data-watch] {
+  .watcher & {
+    transform: translateY(toRem(100));
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+
+    &._watcher-view {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
