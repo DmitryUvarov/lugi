@@ -635,11 +635,10 @@
   }
 
   &__slider {
-    height: fit-content;
+    position: relative;
     flex: 1 1 auto;
-
+    height: fit-content;
     min-width: 0;
-
     @media (max-width: em(800)) {
       max-width: toRem(570);
       margin: 0 auto;
@@ -650,8 +649,9 @@
     }
   }
 
-  &__wrapper {
-  }
+  // &__body-wrapper {
+
+  // }
 
   &__slide-ibg {
     height: fit-content;
